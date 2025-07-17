@@ -1,25 +1,21 @@
-﻿function closeImage() {
-    modal.style.display = "none";
-}
-
-const map = {
+﻿const map = {
     'ا': '*', 'أ': '×', 'ب': '÷', 'ت': '+', 'ث': '-', 'ج': ':',
     'ح': '/', 'خ': '\\', 'د': '|', 'ذ': '!', 'ر': '٪', 'ز': '%',
     'س': '•', 'ش': '°', 'ص': '«', 'ض': '»', 'ط': '^', 'ع': '?',
     '؟': '?', 'غ': '¿', 'ف': "'", 'ق': '"', 'ك': '$', 'ل': '✓',
-    'م': '=', 'ن': '∆', 'ه': '&', 'و': '~', 'ي': '#', ' ': '…'
+    'م': '=', 'ن': '∆', 'ه': '&', 'و': '~', 'ي': '#', ' ': '…',
+    'ة': 'π', 'ئ': '≠', 'ؤ': '≈'  // الرموز الجديدة
 };
 
 const reverseMap = {};
 for (let key in map) {
     reverseMap[map[key]] = key;
 }
-// تعديل فك التشفير بحيث ? و ؟ يعيدان ع
 reverseMap['?'] = 'ع';
 reverseMap['؟'] = 'ع';
-
-// ... بقية الكود كما هو
-
+reverseMap['π'] = 'ة';
+reverseMap['≠'] = 'ئ';
+reverseMap['≈'] = 'ؤ';
 
 function encodeText() {
     const arabicText = document.getElementById("arabicText").value;
@@ -51,10 +47,13 @@ function copyText(id) {
     }
 }
 
+function clearText(id) {
+    const textArea = document.getElementById(id);
+    textArea.value = '';
+}
+
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
-
-// تأكد ان النافذة المخفية عند بداية التحميل
 modal.style.display = "none";
 
 function openImage() {
@@ -63,7 +62,9 @@ function openImage() {
     modalImg.style.transform = `scale(${currentScale})`;
 }
 
-
+function closeImage() {
+    modal.style.display = "none";
+}
 
 let currentScale = 1;
 const scaleStep = 0.1;

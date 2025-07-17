@@ -13,11 +13,17 @@
 
         <label for="arabicText">📝 النص العربي:</label>
         <textarea id="arabicText" placeholder="اكتب النص العربي هنا..."></textarea>
-        <button class="copy-btn" onclick="copyText('arabicText')">📋 نسخ النص</button>
+        <div class="action-buttons">
+            <button class="copy-btn" onclick="copyText('arabicText')">📋 نسخ النص</button>
+            <button class="clear-btn" onclick="clearText('arabicText')" title="مسح النص">❌</button>
+        </div>
 
         <label for="codeText">🔐 الشيفرة:</label>
         <textarea id="codeText" placeholder="هنا تظهر الشيفرة أو أدخل شيفرة لفكها..."></textarea>
-        <button class="copy-btn" onclick="copyText('codeText')">📋 نسخ الشيفرة</button>
+        <div class="action-buttons">
+            <button class="copy-btn" onclick="copyText('codeText')">📋 نسخ الشيفرة</button>
+            <button class="clear-btn" onclick="clearText('codeText')" title="مسح الشيفرة">❌</button>
+        </div>
 
         <div class="buttons">
             <button id="encodeBtn">تحويل إلى شيفرة</button>

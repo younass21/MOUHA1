@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>شيفرة MOUHA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h2>🔐 شيفرة MOUHA</h2>
+
+        <label for="arabicText">📝 النص العربي:</label>
+        <textarea id="arabicText" placeholder="اكتب النص العربي هنا..."></textarea>
+        <button class="copy-btn" onclick="copyText('arabicText')">📋 نسخ النص</button>
+
+        <label for="codeText">🔐 الشيفرة:</label>
+        <textarea id="codeText" placeholder="هنا تظهر الشيفرة أو أدخل شيفرة لفكها..."></textarea>
+        <button class="copy-btn" onclick="copyText('codeText')">📋 نسخ الشيفرة</button>
+
+        <div class="buttons">
+            <button id="encodeBtn">تحويل إلى شيفرة</button>
+            <button id="decodeBtn">تحويل إلى نص عربي</button>
+        </div>
+    </div>
+
+    <!-- الصورة المصغرة -->
+    <div class="mouha-box" onclick="openImage()"></div>
+
+    <!-- النافذة المكبرة -->
+    <div id="imageModal" class="modal">
+        <button id="closeBtn" onclick="closeImage()" aria-label="إغلاق الصورة">✖ إغلاق</button>
+        <img id="modalImg" class="modal-img" src="mouha.jpg" alt="Mouha" />
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -14,6 +14,12 @@ const reverseMap = {};
 for (let key in map) {
     reverseMap[map[key]] = key;
 }
+// تعديل فك التشفير بحيث ? و ؟ يعيدان ع
+reverseMap['?'] = 'ع';
+reverseMap['؟'] = 'ع';
+
+// ... بقية الكود كما هو
+
 
 function encodeText() {
     const arabicText = document.getElementById("arabicText").value;
